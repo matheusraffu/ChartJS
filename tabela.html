@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas no chartJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="display: flex;">
+    <div>
+        <canvas id="myChart" width="900" height="800"></canvas>
+    </div>
+    <div>
+
+        <div>
+            <canvas id="myChart22" width="900" height="800"></canvas>
+        </div>
+</body>
+
+</html>
+<script>
+
+    const ctx = document.getElementById('myChart');
+    const ctx22 = document.getElementById('myChart22');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Umidade',
+                data: [80, 82, 80, 85, 80, 83],
+                borderWidth: 3
+            }, {
+                label: 'Temperaturas',
+                data: [30, 29, 28, 25, 22, 23],
+                borderWidth: 3
+            }]
+        },
+
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    new Chart(ctx22, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Umidade Média',
+                data: [90, 89, 93, 87, 88, 82],
+                borderWidth: 3
+            }, {
+                label: 'Temperatura Média',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
